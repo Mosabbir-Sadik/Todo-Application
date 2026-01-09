@@ -3,13 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A polished, animated todo list with filtering, stats, and keyboard shortcuts.">
     <title>Todo Application</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
 
 </head>
 <body>
     <div class="container">
-        <h1>📝 My Todos</h1>
+        <div class="title-block">
+            <p class="eyebrow">Plan • Focus • Finish</p>
+            <h1>📝 My Todos</h1>
+            <p class="subtitle">A crisp, animated checklist that stays in sync across reloads.</p>
+        </div>
         
         <div class="input-section">
             <input type="text" id="todoInput" placeholder="What needs to be done?" />
@@ -42,6 +50,6 @@
         <button class="clear-completed" id="clearCompleted">Clear Completed</button>
     </div>
 
-    <script src="script.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
