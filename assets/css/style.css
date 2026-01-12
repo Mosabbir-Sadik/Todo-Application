@@ -60,9 +60,10 @@ body::after {
     border: 1px solid var(--border);
     border-radius: var(--radius);
     box-shadow: var(--shadow);
-    width: 100%;
-    max-width: 680px;
-    padding: 32px;
+    width: min(100%, 720px);
+    max-width: calc(100vw - 24px);
+    margin: 0 auto;
+    padding: clamp(20px, 4vw, 32px);
     backdrop-filter: blur(16px);
     z-index: 1;
     overflow: hidden;
@@ -79,6 +80,7 @@ body::after {
 .title-block {
     text-align: center;
     margin-bottom: 24px;
+    animation: fadeIn 0.45s ease;
 }
 
 .eyebrow {
@@ -105,6 +107,7 @@ h1 {
     display: flex;
     gap: 12px;
     margin-bottom: 20px;
+    animation: fadeIn 0.45s ease 0.05s both;
 }
 
 #todoInput {
@@ -243,6 +246,22 @@ h1 {
     }
 }
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slowFloat {
+    from { transform: translateY(0) scale(1); }
+    to { transform: translateY(-10px) scale(1.02); }
+}
+
 .todo-item:hover {
     transform: translateY(-2px);
     border-color: rgba(110, 231, 183, 0.5);
@@ -271,6 +290,7 @@ h1 {
     flex: 1;
     font-size: 16px;
     color: var(--text);
+    line-height: 1.45;
     word-break: break-word;
 }
 
@@ -375,6 +395,24 @@ h1 {
     z-index: 10;
     animation: toastIn 0.25s ease;
     pointer-events: none;
+}
+
+.floating-accents {
+    position: absolute;
+    inset: -40px;
+    pointer-events: none;
+    background: radial-gradient(circle at 20% 30%, rgba(110, 231, 183, 0.14), transparent 30%),
+        radial-gradient(circle at 80% 20%, rgba(251, 191, 36, 0.14), transparent 32%),
+        radial-gradient(circle at 50% 80%, rgba(255, 255, 255, 0.06), transparent 34%);
+    filter: blur(24px);
+    opacity: 0.65;
+    animation: slowFloat 10s ease-in-out infinite alternate;
+    z-index: 0;
+}
+
+.container > * {
+    position: relative;
+    z-index: 1;
 }
 
 .completion-toast.hide {
