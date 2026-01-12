@@ -394,3 +394,97 @@ h1 {
     font-size: 12px;
     letter-spacing: 0.01em;
 }
+
+/* Responsive adjustments for small screens */
+@media (max-width: 768px) {
+    body {
+        padding: 20px;
+    }
+
+    .container {
+        padding: 24px;
+    }
+
+    h1 {
+        font-size: 2.2em;
+    }
+
+    .input-section {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #addBtn {
+        width: 100%;
+    }
+
+    .stats {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    }
+
+    .todo-item {
+        align-items: flex-start;
+    }
+
+    .todo-actions {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+
+    .edit-btn,
+    .delete-btn {
+        width: auto;
+        padding: 8px 12px;
+    }
+
+    .completion-toast {
+        right: 16px;
+        bottom: 16px;
+        max-width: 320px;
+        width: calc(100% - 32px);
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 16px;
+    }
+
+    .container {
+        padding: 20px;
+        border-radius: 12px;
+    }
+
+    h1 {
+        font-size: 1.9em;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-section {
+        gap: 8px;
+    }
+
+    .todo-item {
+        flex-direction: column;
+    }
+
+    .todo-actions {
+        width: 100%;
+        gap: 10px;
+        justify-content: flex-start;
+    }
+
+    .edit-btn,
+    .delete-btn,
+    #addBtn,
+    #todoInput {
+        font-size: 15px;
+    }
+
+    .author-badge {
+        text-align: center;
+    }
+}
