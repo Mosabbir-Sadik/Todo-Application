@@ -31,6 +31,12 @@ body {
     overflow-y: auto;
 }
 
+html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 body::before,
 body::after {
     content: '';
@@ -60,8 +66,8 @@ body::after {
     border: 1px solid var(--border);
     border-radius: var(--radius);
     box-shadow: var(--shadow);
-    width: min(100%, 720px);
-    max-width: calc(100vw - 24px);
+    width: 100%;
+    max-width: 720px;
     margin: 0 auto;
     padding: clamp(20px, 4vw, 32px);
     backdrop-filter: blur(16px);
